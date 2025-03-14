@@ -18,9 +18,19 @@ func main() {
 		loanManager.MakePayment(loanID1)
 
 		if loanManager.IsDelinquent(loanID1) {
-			fmt.Println("Loan 1 is Delinquent!")
+			fmt.Printf("Loan with ID-%d is Delinquent!", loanID1)
 		}
 	}
 
 	fmt.Println("Final Outstanding for Loan 1:", loanManager.GetOutstanding(loanID1))
+
+	for week := 1; week <= 30; week++ {
+		loanManager.MakePayment(loanID2)
+
+		if loanManager.IsDelinquent(loanID2) {
+			fmt.Printf("Loan with ID-%d is Delinquent!", loanID2)
+		}
+	}
+
+	fmt.Println("Final Outstanding for Loan 2:", loanManager.GetOutstanding(loanID2))
 }
